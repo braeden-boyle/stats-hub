@@ -1,6 +1,6 @@
 .regular-font {
     font-family: "Rubik", sans-serif;
-    font-size: auto;
+    font-size: x-large;
     font-weight: lighter;
     font-style: normal;
 }
@@ -38,4 +38,8 @@
 }
 .display-container {
     padding: 1rem;
+}
+.show-area {
+    background-color: white;
+    padding: 0 2rem 0;
 }

@@ -1,0 +1,29 @@
+.player-showcase {
+    background: white;
+    border-radius: 30px;
+    width: fit-content;
+    height: fit-content;
+    outline: 2px solid lightgray;
+}
+.player-image {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 30px 30px 0 0;
+}
+.player-name {
+    font-family: 'Rubik', sans-serif;
+    font-size: x-large;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    padding: 0 0 0 40px;
+    margin-bottom: 0%;
+    background: lightgray;
+}
+.team {
+    font-family: 'Rubik', sans-serif;
+    padding: 0 0 30px 40px;
+    background: lightgray;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+}
