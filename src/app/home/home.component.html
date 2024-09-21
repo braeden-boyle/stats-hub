@@ -1,6 +1,6 @@
 <section class="display-container">
     <div class="player-search-container">
-        <h2 class="regular-font">Player Database</h2>
+        <h2 class="header">Player Database</h2>
         <form>
             <input
             type="text"
@@ -12,6 +12,9 @@
         </form>
     </div>
 </section>
-<section class="show-area">
-    <app-player [player]="player"></app-player>
+<section class="player-list">
+    <app-player
+    *ngFor="let player of playerList"
+    [player]="player"
+    ></app-player>
 </section>
