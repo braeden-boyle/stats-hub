@@ -12,10 +12,23 @@ import { Player } from '../player';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  playerList: Player[] = [];
   playerDataService: PlayerDataService = inject(PlayerDataService);
+  playerList: Player[] = [];
+  filteredPlayerList: Player[] = [];
 
   constructor() {
     this.playerList = this.playerDataService.getAllPlayers();
+    this.filteredPlayerList = this.playerList;
+  }
+
+  filterResults(text: string) {
+    if (!text) {
+      this.filteredPlayerList = this.playerList;
+      return;
+    }
+
+    this.filteredPlayerList = this.playerList.filter((player) => 
+      player?.name.toLowerCase().includes(text.toLowerCase())
+    )
   }
 }

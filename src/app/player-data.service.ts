@@ -36,4 +36,8 @@ export class PlayerDataService {
   getPlayerById(id: number): Player | undefined {
     return this.playerList.find((player) => player.playerId === id);
   }
+
+  getPlayerByName(name: string): Player | undefined {
+    return this.playerList.find((player) => player.name.toLowerCase() === name.toLowerCase())
+  }
 }

@@ -5,16 +5,17 @@
             <input
             type="text"
             id="modern-input"
-            placeholder="Type a player's name..."
+            placeholder="Filter by player name..."
             class="player-search"
+            #filter
             />
-            <button type="button" class="player-search-button">Search</button>
+            <button type="button" class="player-search-button" (click)="filterResults(filter.value)">Search</button>
         </form>
     </div>
 </section>
 <section class="player-list">
     <app-player
-    *ngFor="let player of playerList"
+    *ngFor="let player of filteredPlayerList"
     [player]="player"
     ></app-player>
 </section>
