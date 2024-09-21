@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Player } from '../player';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-player',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './player.component.html',
   styleUrl: './player.component.css'
 })

@@ -1,11 +1,13 @@
 <main>
   <header class="header-container">
-    <h1 class="header-font">
-      <mat-icon class="logo-icon" fontIcon="Whatshot"></mat-icon>
-      StatsHub
-    </h1>
+    <a [routerLink]="['/']">
+      <h1 class="site-name">
+        <mat-icon class="logo-icon" fontIcon="Whatshot"></mat-icon>
+        StatsHub
+      </h1>
+    </a>
   </header>
-  <section class="show-area">
-    <app-home></app-home>
+  <section>
+    <router-outlet></router-outlet>
   </section>
 </main>
