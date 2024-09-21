@@ -9,14 +9,18 @@
 }
 .header-container {
     padding-left: 1rem;
+    display: inline;
   }
-.header-font {
+.site-name {
     font-family: "Rubik", sans-serif;
     font-size: xx-large;
     font-weight: bold;
     font-style: normal;
     color: rgb(0, 119, 255);
-    vertical-align: middle
+    vertical-align: middle;
+    width: fit-content;
+    background: darkgray;
+    display: inline;
 }
 .logo-icon {
     font-family: 'Material Symbols Outlined';
