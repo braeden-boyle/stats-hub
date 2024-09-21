@@ -3,7 +3,7 @@ export interface Player {
     name: string;
     team: string;
     jersey_num: number;
-    age: number;
+    birthday: string;
     hometown: string;
     photo: string;
 }

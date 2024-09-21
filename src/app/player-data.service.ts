@@ -14,7 +14,7 @@ export class PlayerDataService {
       name: "LeBron James",
       team: "Los Angeles Lakers",
       jersey_num: 23,
-      age: 39,
+      birthday: "12/30/1984",
       hometown: "Akron, OH",
       photo: `https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png&w=350&h=254`
     },
@@ -23,7 +23,7 @@ export class PlayerDataService {
       name: "Scottie Barnes",
       team: "Toronto Raptors",
       jersey_num: 4,
-      age: 23,
+      birthday: "08/01/2001",
       hometown: "West Palm Beach, FL",
       photo: `https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4433134.png&w=350&h=254`
     }
