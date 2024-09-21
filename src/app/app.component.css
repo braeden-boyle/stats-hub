@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+.header-container {
+    padding-left: 1rem;
+  }
+.header-font {
+    font-family: "Rubik", sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    font-style: normal;
+    color: rgb(0, 119, 255);
+    vertical-align: middle
+}
+.logo-icon {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 48px;
+    vertical-align: middle;
+}
