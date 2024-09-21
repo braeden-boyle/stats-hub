@@ -1,2 +1,18 @@
-<section>
+<section class="content">
+    <span style="display: inline-flex;">
+        <img
+            class="player-image"
+            [src]="player?.photo"
+        />
+        <section class="player-bio">
+            <label class="bio-label">Name</label>
+            <h2 class="bio-info">{{ player?.name }}</h2>
+            <label class="bio-label">Team</label>
+            <h2 class="bio-info">{{ player?.team }} (#{{player?.jersey_num}})</h2>
+            <label class="bio-label">Date of Birth</label>
+            <h2 class="bio-info">{{ player?.birthday }}</h2>
+            <label class="bio-label">Hometown</label>
+            <h2 class="bio-info">{{ player?.hometown }}</h2>
+        </section>
+    </span>
 </section>

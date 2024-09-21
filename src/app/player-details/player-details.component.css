@@ -1,0 +1,25 @@
+.content {
+    padding: 50px 100px 50px 100px;
+}
+.player-bio {
+    display: inline-block;
+    padding: 20px;
+    align-self: center;
+}
+.player-image {
+    outline: 2px solid lightgray;
+    border-radius: 30px;
+    align-self: center;
+    background: rgb(243, 243, 243);
+}
+.bio-info {
+    font-family: 'Rubik', sans-serif;
+    font-size: x-large;
+    padding: 0;
+    margin: 0;
+}
+.bio-label {
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
