@@ -30,7 +30,6 @@ export class PlayerDataService {
   ]
 
   private baseUrl = "";
-  private apiKey = process.env["API_KEY"];
 
   getAllPlayers(): Player[] {
     return this.playerList;

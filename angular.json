@@ -11,7 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/stats-hub",
             "index": "src/index.html",
@@ -35,9 +35,6 @@
             "prerender": true,
             "ssr": {
               "entry": "server.ts"
-            },
-            "customWebpackConfig": {
-              "path": "src/custom-webpack.config.ts"
             }
           },
           "configurations": {
@@ -65,7 +62,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "stats-hub:build:production"
