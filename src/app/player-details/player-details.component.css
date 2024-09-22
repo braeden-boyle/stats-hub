@@ -7,7 +7,7 @@
     align-self: center;
 }
 .player-image {
-    outline: 2px solid lightgray;
+    box-shadow: 0 0 5px 2px lightgrey;
     border-radius: 30px;
     align-self: center;
     background: rgb(243, 243, 243);
