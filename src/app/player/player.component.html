@@ -1,11 +1,11 @@
 <section class="player-showcase">
-    <a [routerLink]="['/player', player.query_tag]">
+    <a [routerLink]="['/player', player.playerId]">
         <img 
             [src]="player.photo"
-            alt="Photo of {{ player.name_display_first_last }}"
+            alt="Photo of {{ player.name }}"
             crossorigin
         />
-        <h2 class="player-name">{{ player.name_display_first_last }}</h2>
-        <p class="team">{{ player.team_name }}</p>
+        <h2 class="player-name">{{ player.name }}</h2>
+        <p class="team">{{ player.team }}</p>
     </a>
 </section>
