@@ -1,21 +1,46 @@
 <section class="display-container">
-    <div class="player-search-container">
-        <h2 class="header">Player Database</h2>
-        <form>
-            <input
-            type="text"
-            id="modern-input"
-            placeholder="Filter by player name..."
-            class="player-search"
-            #filter
-            />
-            <button type="button" class="player-search-button" (click)="filterResults(filter.value)">Search</button>
-        </form>
-    </div>
-</section>
-<section class="player-list">
-    <app-player
-    *ngFor="let player of filteredPlayerList"
-    [player]="player"
-    ></app-player>
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" fitInkBarToContent>
+        <mat-tab label="NBA">
+            <div class="player-search-container">
+                <form>
+                    <input
+                    type="text"
+                    id="modern-input"
+                    placeholder="Filter by player name..."
+                    class="player-search"
+                    #filter
+                    />
+                    <button type="button" class="player-search-button" (click)="filterResults(filter.value)">Search</button>
+                </form>
+            </div>
+            <section class="player-list">
+                <app-player
+                *ngFor="let player of filteredPlayerList"
+                [player]="player"
+                ></app-player>
+            </section>  
+        </mat-tab>
+        <mat-tab label="NFL">
+            <div class="player-search-container">
+                <form>
+                    <input
+                    type="text"
+                    id="modern-input"
+                    placeholder="Filter by player name..."
+                    class="player-search"
+                    #filter
+                    />
+                    <button type="button" class="player-search-button" (click)="filterResults(filter.value)">Search</button>
+                </form>
+            </div>
+            <section class="player-list">
+                <app-player
+                *ngFor="let player of filteredPlayerList"
+                [player]="player"
+                ></app-player>
+            </section>  
+        </mat-tab>
+        <mat-tab label="NHL">Content 3</mat-tab>
+        <mat-tab label="MLB">Content 3</mat-tab>
+    </mat-tab-group>
 </section>

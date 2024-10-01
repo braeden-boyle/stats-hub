@@ -3,11 +3,13 @@ import { PlayerComponent } from '../player/player.component';
 import { CommonModule } from '@angular/common';
 import { PlayerDataService } from '../player-data.service';
 import { Player } from '../player';
+import { MatIcon } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [PlayerComponent, CommonModule],
+  imports: [PlayerComponent, CommonModule, MatIcon, MatTabsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
