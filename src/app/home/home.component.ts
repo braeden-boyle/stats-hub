@@ -17,6 +17,7 @@ export class HomeComponent {
   playerDataService: PlayerDataService = inject(PlayerDataService);
   playerList: Player[] = [];
   filteredPlayerList: Player[] = [];
+  selectedLeague: string = 'nba';
 
   leagues: { index: number, league: string }[] = [
     { index: 0, league: 'nba' },
@@ -30,20 +31,25 @@ export class HomeComponent {
     this.filteredPlayerList = this.playerDataService.getAllPlayersFromLeague("nba");
   }
 
-  filterResults(text: string) {
-    if (!text) {
-      this.filteredPlayerList = this.playerList;
-      return;
+  filterResults(text: string, event: any) {
+    const league = this.leagues.find(l => l.index === event.index)?.league;
+    if (league) {
+      if (!text) {
+        this.filteredPlayerList = this.playerDataService.getAllPlayersFromLeague(league);
+        return;
+      }
     }
 
     this.filteredPlayerList = this.playerList.filter((player) => 
-      player?.name.toLowerCase().includes(text.toLowerCase())
-    )
+      player?.name.toLowerCase().includes(text.toLowerCase()) &&
+      player?.league == this.selectedLeague
+    );
   }
 
   filterByLeague(target: string) {
+    this.selectedLeague = target;
     this.filteredPlayerList = this.playerDataService.getAllPlayersFromLeague(target);
-    this.filteredPlayerList.forEach(player => console.log(player));
+    console.log('Filtered by league:', target, this.filteredPlayerList);
   }
 
   onTabChange(event: any) {

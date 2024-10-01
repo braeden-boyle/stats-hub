@@ -16,7 +16,7 @@
                     class="player-search"
                     #filter
                     />
-                    <button type="button" class="player-search-button" (click)="filterResults(filter.value)">Search</button>
+                    <button type="button" class="player-search-button" (click)="filterResults(filter.value, $event)">Search</button>
                 </form>
             </div>
             <section class="player-list">
@@ -36,7 +36,7 @@
                     class="player-search"
                     #filter
                     />
-                    <button type="button" class="player-search-button" (click)="filterResults(filter.value)">Search</button>
+                    <button type="button" class="player-search-button" (click)="filterResults(filter.value, $event)">Search</button>
                 </form>
             </div>
             <section class="player-list">
