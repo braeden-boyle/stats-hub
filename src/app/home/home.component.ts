@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { PlayerComponent } from '../player/player.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { PlayerDataService } from '../player-data.service';
 import { Player } from '../player';
 import { MatIcon } from '@angular/material/icon';
@@ -18,9 +18,16 @@ export class HomeComponent {
   playerList: Player[] = [];
   filteredPlayerList: Player[] = [];
 
+  leagues: { index: number, league: string }[] = [
+    { index: 0, league: 'nba' },
+    { index: 1, league: 'nfl' },
+    { index: 2, league: 'nhl' },
+    { index: 3, league: 'mlb' },
+  ];
+
   constructor() {
     this.playerList = this.playerDataService.getAllPlayers();
-    this.filteredPlayerList = this.playerList;
+    this.filteredPlayerList = this.playerDataService.getAllPlayersFromLeague("nba");
   }
 
   filterResults(text: string) {
@@ -32,5 +39,17 @@ export class HomeComponent {
     this.filteredPlayerList = this.playerList.filter((player) => 
       player?.name.toLowerCase().includes(text.toLowerCase())
     )
+  }
+
+  filterByLeague(target: string) {
+    this.filteredPlayerList = this.playerDataService.getAllPlayersFromLeague(target);
+    this.filteredPlayerList.forEach(player => console.log(player));
+  }
+
+  onTabChange(event: any) {
+    const league = this.leagues.find(l => l.index === event.index)?.league;
+    if (league) {
+      this.filterByLeague(league);
+    }
   }
 }

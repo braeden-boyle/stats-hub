@@ -11,6 +11,7 @@ export class PlayerDataService {
   playerList: Player[] = [
     {
       playerId: 1,
+      league: "nba",
       name: "LeBron James",
       team: "Los Angeles Lakers",
       jersey_num: 23,
@@ -20,16 +21,27 @@ export class PlayerDataService {
     },
     {
       playerId: 2,
+      league: "nba",
       name: "Scottie Barnes",
       team: "Toronto Raptors",
       jersey_num: 4,
       birthday: "08/01/2001",
       hometown: "West Palm Beach, FL",
       photo: `https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4433134.png&w=350&h=254`
+    },
+    {
+      playerId: 3,
+      league: "nfl",
+      name: "CeeDee Lamb",
+      team: "Dallas Cowboys",
+      jersey_num: 88,
+      birthday: "4/8/1999",
+      hometown: "Richmond, TX",
+      photo: `https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4241389.png&w=350&h=254`
     }
-  ]
 
-  private baseUrl = "";
+
+  ]
 
   getAllPlayers(): Player[] {
     return this.playerList;
@@ -41,5 +53,9 @@ export class PlayerDataService {
 
   getPlayerByName(name: string): Player | undefined {
     return this.playerList.find((player) => player.name.toLowerCase() === name.toLowerCase())
+  }
+
+  getAllPlayersFromLeague(targetLeague: string): Player[] {
+    return this.playerList.filter(player => player.league == targetLeague);
   }
 }
