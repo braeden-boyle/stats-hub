@@ -48,6 +48,16 @@ export class PlayerDataService {
       birthday: "08/07/1987",
       hometown: "Cole Harbour, NS",
       photo: `https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3114.png&w=350&h=254`
+    },
+    {
+      playerId: 5,
+      league: "mlb",
+      name: "Vladimir Guerrero Jr.",
+      team: "Toronto Blue Jays",
+      jersey_num: 27,
+      birthday: "03/16/1999",
+      hometown: "Montreal, QC",
+      photo: `https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/35002.png&w=350&h=254`
     }
 
 
