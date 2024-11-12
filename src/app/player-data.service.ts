@@ -35,9 +35,19 @@ export class PlayerDataService {
       name: "CeeDee Lamb",
       team: "Dallas Cowboys",
       jersey_num: 88,
-      birthday: "4/8/1999",
+      birthday: "04/08/1999",
       hometown: "Richmond, TX",
       photo: `https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4241389.png&w=350&h=254`
+    },
+    {
+      playerId: 4,
+      league: "nhl",
+      name: "Sidney Crosby",
+      team: "Pittsburgh Penguins",
+      jersey_num: 87,
+      birthday: "08/07/1987",
+      hometown: "Cole Harbour, NS",
+      photo: `https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/3114.png&w=350&h=254`
     }
 
 

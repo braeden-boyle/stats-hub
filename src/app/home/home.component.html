@@ -6,7 +6,7 @@
         animationDuration="0ms"
     >
         <mat-tab label="NBA">
-            <span (click)="filterByLeague('nba')"></span>
+            <!-- <span (click)="filterByLeague('nba')"></span> -->
             <div class="player-search-container">
                 <form>
                     <input
@@ -46,7 +46,26 @@
                 ></app-player>
             </section>  
         </mat-tab>
-        <mat-tab label="NHL">Content 3</mat-tab>
+        <mat-tab label="NHL">
+            <div class="player-search-container">
+                <form>
+                    <input
+                    type="text"
+                    id="modern-input"
+                    placeholder="Filter by player name..."
+                    class="player-search"
+                    #filter
+                    />
+                    <button type="button" class="player-search-button" (click)="filterResults(filter.value, $event)">Search</button>
+                </form>
+            </div>
+            <section class="player-list">
+                <app-player
+                *ngFor="let player of filteredPlayerList"
+                [player]="player"
+                ></app-player>
+            </section>  
+        </mat-tab>
         <mat-tab label="MLB">Content 4</mat-tab>
     </mat-tab-group>
 </section>
