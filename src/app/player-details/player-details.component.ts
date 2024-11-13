@@ -3,11 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { PlayerComponent } from '../player/player.component';
 import { Player } from '../player';
 import { PlayerDataService } from '../player-data.service';
+import { HomeComponent } from '../home/home.component';
+import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-player-details',
   standalone: true,
-  imports: [PlayerComponent, ],
+  imports: [PlayerComponent, HomeComponent, MatTableModule],
   templateUrl: './player-details.component.html',
   styleUrl: './player-details.component.css'
 })
