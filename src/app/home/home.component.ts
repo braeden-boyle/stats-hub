@@ -7,7 +7,6 @@ import { MatIcon } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ApiService } from '../api.service';
 import { ApiPlayer } from '../apiPlayer';
-import { error } from 'console';
 
 @Component({
   selector: 'app-home',
@@ -41,41 +40,24 @@ export class HomeComponent implements OnInit {
   }
 
   loadPlayerData(): void {
-    this.playerNames.forEach((name) => {
-      this.apiService.getPlayerData(name).subscribe({
-        next: (data) => {
-          this.players = [...this.players, ...data];
-        },
-        error: (error) => {
-          console.error(`Error fetching data for ${name}:`, error);
-        }
-      });
+    this.apiService.players$.subscribe((players) => {
+      this.players = players;
     });
+    this.apiService.loadPlayersData(this.playerNames);
 
     this.downloadPlayerData();
   }
   
   downloadPlayerData() {
-    // Convert players array to JSON string
-    const dataStr = JSON.stringify(this.players, null, 2); // Pretty print with 2 spaces
-  
-    // Create a Blob with the data
+    const dataStr = JSON.stringify(this.players, null, 2);
     const blob = new Blob([dataStr], { type: 'application/json' });
-  
-    // Create a link element to trigger download
     const link = document.createElement('a');
-    
-    // Create a URL for the Blob
     const url = window.URL.createObjectURL(blob);
     
-    // Set the download filename
     link.href = url;
-    link.download = 'players-data.json'; // Set the desired file name
-    
-    // Trigger the download
+    link.download = 'players-data.json';
     link.click();
     
-    // Clean up: revoke the Object URL after download to avoid memory leaks
     window.URL.revokeObjectURL(url);
   }
 
